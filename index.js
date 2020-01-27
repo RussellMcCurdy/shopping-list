@@ -1,7 +1,9 @@
-$(document).ready(function() {
+$(function() {
     $('#js-shopping-list-form').submit(function(event) {
         event.preventDefault();
-        const item = $('#shopping-list-entry').val();
+
+    const item = $('#shopping-list-entry').val();
+    
     $('.shopping-list').prepend(
         `<li>
             <span class ="shopping-item">${item}</span>
@@ -14,20 +16,24 @@ $(document).ready(function() {
                 </button>
             </div>
         </li>`);
-        registerEvents();
+        $(registerEvents);
     });
 });
 
-registerEvents();
 
 function registerEvents() {
+
     $('.shopping-item-delete').on("click", function(event) {
         $(this).closest('li').remove();
     });
+
     $('.shopping-item-toggle').on("click", function(event) {
         $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
-    });
-};
-
-
+    
+   
+    }
+    );
+    
+}
+registerEvents();
 
